@@ -1,30 +1,26 @@
 import React from 'react';
+// управление состоянием
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
+// навигация
+import { BrowserRouter as Router } from 'react-router-dom';
+// стили
 import './App.css';
+// компоненты
+import Main from './components/Main';
+import NavAside from './components/NavAside';
 
 function App() {
-  return (
-    <div className="App">
-
-      <div className="nav-aside">
-        <header className="App-header">
-        </header>
-        <main>
-          <input value="Поиск по дереву" />
-          <ul>
-            <li>Дочерние общества</li>
-            <li>Админ. панель</li>
-          </ul>
-        </main>
-      </div>
-
-      <div className='content-main'>
-        <header>
-          <p>Продукция, Об Объектах, Дочерние общества</p>
-        </header>
-      </div>
-
-    </div>
-  );
+    return (
+        <Provider store={store}>
+            <Router>
+                <div className="App">
+                    <NavAside />
+                    <Main />
+                </div>
+            </Router>
+        </Provider>
+    );
 }
 
 export default App;
