@@ -11,10 +11,10 @@ function MainHeader() {
                             <NavLink className="nav-link" to="/production">Продукты</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled">Об объектах</a>
+                            <NavLink className="nav-link disabled" to="/">Об объектах</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled">Дочерние общества</a>
+                            <NavLink className="nav-link disabled" to="/">Дочерние общества</NavLink>
                         </li>
                     </ul>
                     <div className="navbar-text d-flex flex-row">

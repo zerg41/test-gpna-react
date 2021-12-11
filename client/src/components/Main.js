@@ -1,12 +1,28 @@
+import { useEffect } from 'react';
 // навигация
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
+// управление состоянием
+import { useDispatch, useSelector } from 'react-redux';
+import { setActivePageLocation } from '../redux/activePageSlice';
 // компоненты
 import MainHeader from "./Main/MainHeader";
 import Home from './Main/Home';
 import Production from './Main/Production';
 
 
+
 function Main() {
+
+    // при обновлении компонента, в стейт будет записана информация о текущей странице (pathname "/...")
+    const activePageLocation = useSelector((state) => state.activePage.currentLocation);
+    const dispatch = useDispatch();
+
+    const location = useLocation();
+    useEffect(() => {
+        console.log(`Адрес текущей страницы: ${location.pathname}`);
+        console.log(`В глобальном стейте записано: ${activePageLocation}`);
+        dispatch(setActivePageLocation(location.pathname));
+    });
 
     return(
         <div className="App__main">

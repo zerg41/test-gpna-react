@@ -11,6 +11,7 @@ import Main from './components/Main';
 import NavAside from './components/NavAside';
 
 function App() {
+
     return (
         <Provider store={store}>
             <Router>

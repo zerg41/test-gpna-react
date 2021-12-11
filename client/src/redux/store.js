@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import activePageReducer from './activePageSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    activePage: activePageReducer,
   },
 });
