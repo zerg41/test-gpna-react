@@ -9,30 +9,45 @@ body {
 }
 
 .nav-aside {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  width: 238px;
+  width: 240px;
   background-color: rgba(211, 211, 211, 0.3);
   border-right: 2px solid lightgray;
 }
 
 .nav-aside_open {
-  transition: left ease 0.2s;
+  transition: left ease 0.1s;
   left: 0px;
 }
 
 .nav-aside_close {
-  transition: left ease 0.2s;
-  left: -214px;
+  transition: all ease 0.1s;
+  left: calc(-240px + 26px);
+  position: absolute;
 }
 
 .nav-aside__accordion-title {
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
+
+.nav-aside__accordion-title>div>span {
+  width: 10px;
+  height: 10px;
+}
+
 .nav-aside__accordion-title_text {
   padding-left: 10px;
+  padding-bottom: 5px;
   text-decoration: underline;
   font-weight: bolder;
+}
+
+.nav-aside__accordion-content {
+  padding-left: 20px;
 }
 
 .nav-aside__toggle-btn {
@@ -45,7 +60,10 @@ body {
 }
 
 .main {
-  width: 100%;
+  width: calc(100%-24px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .app-bar {

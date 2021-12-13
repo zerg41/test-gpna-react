@@ -1,19 +1,19 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 // компоненты
 import Header from './NavAside/Header';
 import Menu from './NavAside/Menu';
 
 function NavAside() {
 
-    // const [isNavAsideOpen, setIsNavAsideOpen] = useState(true);
+    const [isNavAsideOpen, setIsNavAsideOpen] = useState(true);
 
-    // const toggleHandler = () => {
-    //     setIsNavAsideOpen(!isNavAsideOpen);
-    // };
+    const toggleHandler = () => {
+        setIsNavAsideOpen(!isNavAsideOpen);
+    };
 
     return(
-        // <div className={isNavAsideOpen ? "nav-aside nav-aside_open" : "nav-aside nav-aside_close"}>
-        <div className="nav-aside nav-aside_open">
+        <div className={isNavAsideOpen ? "nav-aside nav-aside_open" : "nav-aside nav-aside_close"}>
+        {/* <div className="nav-aside nav-aside_open"> */}
             <Header />
             <div className="content__container d-flex flex-row">
                 <nav className="mx-auto mt-4">
@@ -23,8 +23,9 @@ function NavAside() {
                 <div className="my-auto">
                     <button 
                     className="nav-aside__toggle-btn"
+                    onClick={toggleHandler}
                     >
-                        <span className="fas fa-angle-left"></span>
+                        {isNavAsideOpen ? <span className="fas fa-angle-left"></span> : <span className="fas fa-angle-right"></span>}
                     </button>
                 </div>
             </div>
