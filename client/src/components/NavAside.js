@@ -1,31 +1,34 @@
-import logo from '../assets/brand-logo.png';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+// import { useState } from 'react';
+// компоненты
+import Header from './NavAside/Header';
+import Menu from './NavAside/Menu';
 
 function NavAside() {
 
+    // const [isNavAsideOpen, setIsNavAsideOpen] = useState(true);
+
+    // const toggleHandler = () => {
+    //     setIsNavAsideOpen(!isNavAsideOpen);
+    // };
+
     return(
-        <div className="App__nav-aside">
-            <header className="app-bar">
-                <nav className="navbar navbar-expand-lg navbar-light bg-light py-0">
-                    <div className="container-fluid">
-                        <a className="navbar-brand" href="/">
-                            <img 
-                            className="d-inline-block align-text-top"
-                            src={logo} alt="gpn-logo"
-                            width="200" height="53"
-                            />
-                        </a>
-                    </div>
-                </nav>
-            </header>
+        // <div className={isNavAsideOpen ? "nav-aside nav-aside_open" : "nav-aside nav-aside_close"}>
+        <div className="nav-aside nav-aside_open">
+            <Header />
             <div className="content__container d-flex flex-row">
                 <nav className="mx-auto mt-4">
                     <input placeholder="Поиск по дереву" />
+                    <Menu />
                 </nav>
-                <span className="my-auto">
-                    <ArrowBackIosNewIcon />
-                </span>
+                <div className="my-auto">
+                    <button 
+                    className="nav-aside__toggle-btn"
+                    >
+                        <span className="fas fa-angle-left"></span>
+                    </button>
+                </div>
             </div>
+
         </div>
     );
 }

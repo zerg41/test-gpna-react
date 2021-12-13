@@ -16,7 +16,7 @@ const addRow = (index, productName) =>{
 };
 
 const RenderProducts = () => {
-    let products = [];
+    const products = [];
 
     for (let i = 0; i < PRODUCTS_NUMBER; i ++) {
         let index = i + 1;
@@ -31,14 +31,14 @@ const RenderProducts = () => {
 function Production() {
 
     return(
-        <div className="container">
-            <h3 className="mt-4 ms-4">Продукция</h3>
-            <div className="col-8 mt-4 ms-4">
+        <div className="container-fluid">
+            <h3 className="pt-4 ps-4">Продукция</h3>
+            <div className="col-12 col-lg-8 pt-4 ps-4">
                 <table className="table table-sm">
                     <thead>
                         <tr>
-                            <th scope="col" className="col-3">ID</th>
-                            <th scope="col">НАИМЕНОВАНИЕ</th>
+                            <th scope="col" className="col-2">ID</th>
+                            <th scope="col" className="col-6">НАИМЕНОВАНИЕ</th>
                         </tr>
                     </thead>
                     <tbody>

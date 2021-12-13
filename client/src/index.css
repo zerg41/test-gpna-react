@@ -1,14 +1,72 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-y: hidden ;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.nav-aside {
+  position: relative;
+  width: 238px;
+  background-color: rgba(211, 211, 211, 0.3);
+  border-right: 2px solid lightgray;
+}
+
+.nav-aside_open {
+  transition: left ease 0.2s;
+  left: 0px;
+}
+
+.nav-aside_close {
+  transition: left ease 0.2s;
+  left: -214px;
+}
+
+.nav-aside__accordion-title {
+  display: flex;
+  flex-direction: row;
+}
+.nav-aside__accordion-title_text {
+  padding-left: 10px;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.nav-aside__toggle-btn {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  width: 24px;
+  height: 24px;
+}
+
+.main {
+  width: 100%;
+}
+
+.app-bar {
+  border-bottom: 2px solid lightgray;
+  height: calc(6vh-2px);
+}
+
+.content__container {
+  height: 94vh;
+}
+
+.avatar__circle {
+  background: lightgray;
+  border-radius: 50%;
+  color: #fff;
+  height: 2.5em;
+  position: relative;
+  width: 2.5em;
+}
+
+/* переопределение bootstrap */
+.table>:not(caption)>*>* {
+  border: none;
 }

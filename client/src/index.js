@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // стили
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css';
 // компоненты
 import App from './App';

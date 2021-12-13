@@ -5,15 +5,14 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setActivePageLocation } from '../redux/activePageSlice';
 // компоненты
-import MainHeader from "./Main/MainHeader";
+import Header from "./Main/Header";
 import Home from './Main/Home';
 import Production from './Main/Production';
 
 
-
 function Main() {
 
-    // при обновлении компонента, в стейт будет записана информация о текущей странице (pathname "/...")
+    // при обновлении компонента, в глобальный стейт будет записана информация о текущей странице (pathname "/...")
     const activePageLocation = useSelector((state) => state.activePage.currentLocation);
     const dispatch = useDispatch();
 
@@ -25,8 +24,8 @@ function Main() {
     });
 
     return(
-        <div className="App__main">
-            <MainHeader />
+        <div className="main">
+            <Header />
             <main className="content__container">
                 <Switch>
                     <Route exact path="/">

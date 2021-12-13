@@ -1,3 +1,4 @@
+// стилизация
 import homeImg from '../../assets/home.png';
 
 function Home() {
